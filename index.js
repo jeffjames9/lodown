@@ -46,8 +46,6 @@ module.exports.identity = identity;
  * between objects, arrays, and null.
  * 
  * @param {any type of input} value: Input of any type
- * @param {Function} action: The Function to be applied to each value in the 
- * collection
  * 
  * @return {String}: The datatype of the input as a string
  */
@@ -307,7 +305,7 @@ module.exports.map = map;
  * property as a new array
  * 
  * @param {Array} arrOfObj: An array of objects
- * @param {Property} prop: the key of a key/value pair
+ * @param {String} string of the property's key: the key of a key/value pair
  * 
  * @return {Array}: an array of values for the given key
  */
@@ -329,7 +327,9 @@ module.exports.pluck = pluck;
  * of the arrays or objects
  * 
  * @return {Boolean}}: true if all arrays or objects resolve to true or truthy;
- * false if even one resolves to false or falsey.
+ * false if even one resolves to false or falsey.   If the function is not 
+ * provided, it will return true if every element is truthy, otherwise it will
+ * return false.
  */
  
 function every(collection, func) {
@@ -367,7 +367,9 @@ module.exports.every = every;
  * of the arrays or objects
  * 
  * @return {Boolean}}: false if all arrays or objects resolve to false or falsey;
- * true if even one resolves to true or truthy.
+ * true if even one resolves to true or truthy.   If the func is not provided, 
+ * it will return true if at least one element is truthy, otherwise it will
+ * return false.
  */
  
 function some(collection, func) {
@@ -429,9 +431,6 @@ module.exports.reduce = reduce;
 /**
  * extend: takes any number of objects as arguments and returns the first object
  * with the properties from all the other objects added to it
- * 
- * @param {Object} object1: An object
- * @param {Object} object2: As many or few objects as you'd like
  * 
  * @return {Object}: First object updated with all the properties from the
  * successive objects

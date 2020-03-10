@@ -1,6 +1,6 @@
 {
   "name": "lodown-jefffjames9",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "My first npm library for lodown",
   "main": "index.js",
   "directories": {
